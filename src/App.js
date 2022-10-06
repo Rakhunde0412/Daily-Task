@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useGetAllPostQuery } from "./services/post";
 
 function App() {
+  const responseInfo = useGetAllPostQuery();
+  console.log("Response", responseInfo);
+  console.log("Data", responseInfo.data);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h2>Redux-Toolkit</h2>
+      {responseInfo.data.map((post) => {
+        return <div>{post.title}</div>;
+      })}
+    </>
   );
 }
 
