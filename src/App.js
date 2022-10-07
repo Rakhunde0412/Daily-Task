@@ -1,16 +1,22 @@
 import "./App.css";
-import { useGetAllPostQuery } from "./services/post";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cart from "./components/Cart";
+import SignUp from "./components/forms/SignUp";
+import Login from "./components/forms/Login";
+
+
 
 function App() {
-  const responseInfo = useGetAllPostQuery();
-  console.log("Response", responseInfo);
-  console.log("Data", responseInfo.data);
+  
   return (
     <>
-      <h2>Redux-Toolkit</h2>
-      {responseInfo.data.map((post) => {
-        return <div>{post.title}</div>;
-      })}
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Login />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }
