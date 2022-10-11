@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
@@ -138,9 +139,9 @@ const Footer = () => {
           className="text-center p-4"
           
         >
-          © 2021 Copyright:
+          © 2022 Copyright:
           <Link className="text-reset fw-bold" to="">
-            MDBootstrap.com
+           My site
           </Link>
         </div>
         {/* Copyright  */}

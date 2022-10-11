@@ -38,7 +38,7 @@ const Login = () => {
       localStorage.setItem("isAuthenticated","true");
        swal("Login successfully!!", "Welcome to dashboard!!", "success");
 
-      navigate("/dashboard");
+      navigate("/container");
     } else {
        swal("Invalid credentials!", "Please enter valid details", "error");
      
@@ -70,7 +70,7 @@ const Login = () => {
 
   return (
     <>
-      <p className="text-center h1 fw-bold mb-4 mx-1 mx-md-4 mt-2 ">Login</p>
+      <p className="text-center  fw-bold mb-4 mx-1 mx-md-4 mt-2 ">Login  Here</p>
       <div className="d-flex justify-content-center  ">
       <form >
         <div className="form-outline mb-4">
@@ -120,7 +120,7 @@ const Login = () => {
         </button>
 
         <div className="">
-          <p className="fw-bold">Not a member? </p>
+          <p className="fw-bold">New to the website? </p>
           <button
             className="btn btn-primary w-100"
             onClick={() => {
@@ -135,5 +135,6 @@ const Login = () => {
     </>
   );
 };
+
 
 export default Login;
