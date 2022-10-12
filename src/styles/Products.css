@@ -1,0 +1,19 @@
+.homeCard {
+
+    background: white;
+  
+    padding: 20px;
+  
+    text-align: center;
+  
+    border-radius: 10px;
+  
+  }
+
+  img {
+
+    height: 80px;
+  
+    object-fit: contain;
+  
+  }

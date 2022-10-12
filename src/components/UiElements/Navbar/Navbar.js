@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
+import LoginIcon from '@mui/icons-material/Login';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 
 const Navbar = () => {
   return (
@@ -34,13 +37,14 @@ const Navbar = () => {
               <div className="navbar-nav">
                 <Link className="nav-link active" aria-current="page" to="/">
                   {" "}
-                  <i class="material-icons md-36">home</i>{" "}
+                  <HomeIcon  color="primary" />
+                  
                 </Link>
                 <Link className="nav-link" to="/">
-                  <i className="material-icons">description</i>
+                  <ContactPageIcon  color="primary"/>
                 </Link>
                 <Link className="nav-link" to="/">
-                  <i className="material-icons">shopping_cart</i>
+                  <ShoppingCartIcon  color="primary" />
                 </Link>
                 <Link
                   className="nav-link "
@@ -48,7 +52,7 @@ const Navbar = () => {
                   tabindex="-1"
                   aria-disabled="true"
                 >
-                  <i className="material-icons">login</i>
+                  <LoginIcon  color="primary" />
                 </Link>
               </div>
             </div>

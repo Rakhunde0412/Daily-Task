@@ -1,11 +1,46 @@
-import React from 'react'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const SingleProduct = () => {
-  return (
-    <>
-      <h2>Single page</h2>
-    </>
-  )
-}
+  const { id } = useParams();
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    const getProduct = () => {
+      setLoading(true);
 
-export default SingleProduct
+      axios.get(`http://localhost:3000/products/${id}`).then((response) => {
+        setProduct(response.data);
+      });
+    };
+    getProduct();
+    console.log(product, "single product data");
+  }, []);
+
+  const Loading =() =>{
+    return(
+      <>
+        loading...
+      </>
+    )
+  }
+
+  const ShowProwduct=() =>{
+    return(
+      <>
+
+      </>
+    )
+  }
+
+  return <>
+    <div className="container">
+      <div className="row">
+        {loading?<Loading/>:<ShowProwduct/>}
+      </div>
+    </div>
+  </>;
+};
+
+export default SingleProduct;

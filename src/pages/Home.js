@@ -9,12 +9,11 @@ const Home = () => {
           <p>Welcome to </p>
           <h2> Online Shopping </h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident,
-            omnis? Minima reiciendis sed earum ducimus doloribus ipsa eius
-            dignissimos perspiciatis debitis.
+          Buy Men’s & Women’s Sandals on wecart, Branded Slippers online Shopping Destinations
+           in India. Huge range of comfortable sandals that can be he make one of the most Trendy Product ever. Wecart.in Offering Men’s casual shoes &Women’s Casual Sandals. Online Mobile Accessories store in India
           </p>
           <NavLink to="/products">
-          <button className="btn btn-primary">Shop Now</button>
+          <button className="btn btn-outline-primary">Shop Now</button>
           </NavLink>
         </div>
 
