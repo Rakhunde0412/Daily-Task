@@ -49,7 +49,7 @@ const Navbar = () => {
                 <Link
                   className="nav-link "
                   to="/"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-disabled="true"
                 >
                   <LoginIcon  color="primary" />

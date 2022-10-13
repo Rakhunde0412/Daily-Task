@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Footer from "../components/UiElements/Footer/Footer";
 import Navbar from "../components/UiElements/Navbar/Navbar";
 import "../styles/Products.css";
@@ -103,12 +103,12 @@ const Products = () => {
                 key={i}
                 className="card col-3  m-2 h-100 text-center homeCard "
               >
-                <img src={post.image} className="card-img-top" alt="..." />
+                <img src={post.image} className="card-img-top imageSize" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">{post.title}</h5>
                   <p className="card-text">${post.price}</p>
 
-                  <Link className="btn btn-outline-primary">Buy Now</Link>
+                  <NavLink to={`/products/${post.id}`} className="btn btn-outline-primary">Buy Now</NavLink>
                 </div>
               </div>
             ))}
