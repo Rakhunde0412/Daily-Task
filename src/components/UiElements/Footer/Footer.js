@@ -1,5 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GoogleIcon from '@mui/icons-material/Google';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
   return (
@@ -17,22 +23,22 @@ const Footer = () => {
           {/* Right  */}
           <div>
             <Link to="" className="me-4 text-reset">
-              <i className="fab fa-facebook-f"></i>
+             <FacebookIcon/>
             </Link>
             <Link to="" className="me-4 text-reset">
-              <i className="fab fa-twitter"></i>
+              <TwitterIcon/>
             </Link>
             <Link to="" className="me-4 text-reset">
-              <i className="fab fa-google"></i>
+              <GoogleIcon/>
             </Link>
             <Link to="" className="me-4 text-reset">
-              <i className="fab fa-instagram"></i>
+             <InstagramIcon/>
             </Link>
             <Link to="" className="me-4 text-reset">
-              <i className="fab fa-linkedin"></i>
+              <LinkedInIcon/>
             </Link>
             <Link to="" className="me-4 text-reset">
-              <i className="fab fa-github"></i>
+              <GitHubIcon/>
             </Link>
           </div>
           {/* Right  */}
@@ -48,7 +54,7 @@ const Footer = () => {
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 {/* Content  */}
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <i className="fas fa-gem me-3"></i>Company name
+                  <i className="fas fa-gem me-3"></i>La Online Store
                 </h6>
                 <p>
                   Here you can use rows and columns to organize your footer

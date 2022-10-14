@@ -2,7 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Footer from '../components/UiElements/Footer/Footer'
-import Navbar from '../components/UiElements/Navbar/Navbar'
+import Header from '../components/UiElements/Navbar/Header';
+
 
 const Cart = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const Cart = () => {
   }, []);
   return (
     <>
-    <Navbar/>
+    <Header/>
            <div className="row">
             <div className="col-md-4">
               <img src={product.image} alt={product.title} height="200px" width="180" />

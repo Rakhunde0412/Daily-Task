@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Link, NavLink } from "react-router-dom";
 import Footer from "../components/UiElements/Footer/Footer";
-import Navbar from "../components/UiElements/Navbar/Navbar";
+import Header from "../components/UiElements/Navbar/Header";
 import "../styles/Products.css";
 
 const Products = () => {
@@ -80,7 +80,7 @@ const Products = () => {
 
   return (
     <>
-      <Navbar />
+      <Header />
       <div className="container my-5  py-5">
         <div className="row">
           <div className="col-12 mb-5">
@@ -101,14 +101,23 @@ const Products = () => {
             productData?.map((post, i) => (
               <div
                 key={i}
-                className="card col-3  m-2 h-100 text-center homeCard "
+                className="card col-3 ms-5 mb-2 h-100 text-center homeCard "
               >
-                <img src={post.image} className="card-img-top imageSize" alt="..." />
+                <img
+                  src={post.image}
+                  className="card-img-top imageSize"
+                  alt="..."
+                />
                 <div className="card-body">
-                  <h5 className="card-title">{post.title}</h5>
+                  <h5 className="card-title">{post.title.substring(0,10)}</h5>
                   <p className="card-text">${post.price}</p>
 
-                  <NavLink to={`/products/${post.id}`} className="btn btn-outline-primary">Buy Now</NavLink>
+                  <NavLink
+                    to={`/products/${post.id}`}
+                    className="btn btn-outline-primary"
+                  >
+                    Buy Now
+                  </NavLink>
                 </div>
               </div>
             ))}
