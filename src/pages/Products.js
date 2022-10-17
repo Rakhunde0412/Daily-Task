@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
-import { Link, NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import Footer from "../components/UiElements/Footer/Footer";
 import Header from "../components/UiElements/Navbar/Header";
+
 import "../styles/Products.css";
 
 const Products = () => {
@@ -11,6 +13,7 @@ const Products = () => {
   const [filter, setFilter] = useState(productData);
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
+
 
   useEffect(() => {
     allData();
@@ -27,9 +30,9 @@ const Products = () => {
     );
   };
 
-  const allData = () => {
-    axios.get("http://localhost:3000/all-products").then((response) => {
-      setProductData(response.data);
+  const  allData =async () => {
+   await axios.get("http://localhost:3000/all-products").then((response) => {
+   setProductData(response.data);
     });
   };
 
@@ -39,6 +42,7 @@ const Products = () => {
     setProductData(updatedList);
   };
 
+  
   const ShowProducts = () => {
     return (
       <>
@@ -109,7 +113,7 @@ const Products = () => {
                   alt="..."
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{post.title.substring(0,10)}</h5>
+                  <h5 className="card-title">{post.title.substring(0, 10)}</h5>
                   <p className="card-text">${post.price}</p>
 
                   <NavLink
@@ -118,6 +122,7 @@ const Products = () => {
                   >
                     Buy Now
                   </NavLink>
+                 
                 </div>
               </div>
             ))}

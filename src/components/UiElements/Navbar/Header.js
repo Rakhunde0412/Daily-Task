@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const items=useSelector((state)=>state.cart);
+  const handleLogout= ()=>{
+    localStorage.removeItem("isAuthenticated");
+  }
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow">
@@ -78,8 +83,13 @@ const Header = () => {
             </Link>
             <Link to="/cart">
               <button className="btn btn-outline-primary ms-3">
-                <ShoppingCartIcon /> Cart(0)
+                <ShoppingCartIcon /> Cart:{items.length}
               </button>
+            </Link>
+            <Link to="/"
+               className="btn btn-outline-primary ms-3" onClick={handleLogout}>
+                <PersonAddAltIcon /> Logout
+              
             </Link>
           </div>
         </div>

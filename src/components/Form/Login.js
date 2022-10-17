@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import swal from 'sweetalert';
 
+
 const Login = () => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
@@ -70,8 +71,16 @@ const Login = () => {
 
   return (
     <>
-      <p className="text-center  fw-bold mb-4 mx-1 mx-md-4 mt-2 ">Login  Here</p>
-      <div className="d-flex justify-content-center  ">
+    
+     <div className="row">
+     <div className="col-md-6">
+    
+      <img width="80%" src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-135.jpg?w=2000" alt="login" />
+
+     </div>
+      <div className="col-md-6">
+      <p className="text-center  fw-bold mb-4 mx-1 mx-md-4 mt-2  text-black-50">Login  Here</p>
+      <div className="d-flex justify-content-center ">
       <form >
         <div className="form-outline mb-4">
           <label className="form-label" htmlFor="email">
@@ -80,7 +89,7 @@ const Login = () => {
           <input
             type="email"
             id="email"
-            className="form-control "
+            className="form-control  "
             value={loginData.userName}
             onChange={(e) =>
               setLoginData({
@@ -132,6 +141,10 @@ const Login = () => {
         </div>
       </form>
       </div>
+      </div>
+     </div>
+     
+    
     </>
   );
 };

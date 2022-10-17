@@ -1,24 +1,32 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import Footer from "../components/UiElements/Footer/Footer";
-import Navbar from "../components/UiElements/Navbar/Navbar";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
+import Header from "../components/UiElements/Navbar/Header";
+import {add} from "../redux/features/product/productSlice";
+import { useDispatch } from "react-redux";
 
 const SingleProduct = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     axios.get(`http://localhost:3000/all-products/${id}`).then((response) => {
       setProduct(response.data);
+      setLoading(false);
       console.log(product, "single data");
     });
   }, []);
 
   const Loading = () => {
     return <>loading...</>;
+  };
+
+  const handleAdd = (product) => {
+      dispatch(add(product));
   };
 
   const ShowProduct = () => {
@@ -44,8 +52,15 @@ const SingleProduct = () => {
             </p>
             <h3 className="display-6">${product.price}</h3>
             <p className="lead">{product.description}</p>
-            <button className="btn btn-outline-primary px-4 my-2">Add to Cart</button>
-            <NavLink to="/cart" className="btn btn-outline-primary px-4 mx-2">Go to Cart</NavLink>
+            <button
+              className="btn btn-outline-primary px-4 my-2"
+              onClick={handleAdd(product)}
+            >
+              Add to Cart
+            </button>
+            <Link to="/cart" className="btn btn-outline-primary px-4 mx-2">
+              Go to Cart
+            </Link>
           </div>
         </div>
       </>
@@ -54,9 +69,9 @@ const SingleProduct = () => {
 
   return (
     <>
-      <Navbar />
+      <Header />
       <div className="container">
-        <div className="row">{loading ? <Loading /> : <ShowProduct />}</div>
+        <div className="row">{loading ? Loading() : ShowProduct()}</div>
       </div>
       <Footer />
     </>
