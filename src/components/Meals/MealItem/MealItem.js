@@ -1,18 +1,9 @@
 import React from 'react'
-
+import classes from './MealItem.module.css';
 const MealItem = () => {
   return (
     <>
-     <li>
-        <div>
-            <h3>name</h3>
-            <div>description</div>
-            <div>price</div>
-        </div>
-        <div>
-            
-        </div>
-     </li>
+     
       
     </>
   )
