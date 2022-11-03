@@ -1,7 +1,9 @@
 import { MoreVert } from "@mui/icons-material";
 import classes from "./Post.module.css";
-//  import "../../../public/assets/post/1.jpeg"
-const Post = () => {
+import { Users } from "../../dummyData";
+const Post = ({ post }) => {
+  const user=Users.filter(u=>u.id===1)
+  console.log(user[0].username);
   return (
     <>
       <div className={classes.post}>
@@ -14,28 +16,27 @@ const Post = () => {
                 alt=""
               />
               <span className={classes.postUsername}>vivek rakhunde</span>
-              <span className={classes.postDate}>3 minutes ago</span>
+              <span className={classes.postDate}>{post.date}</span>
             </div>
             <div className={classes.postTopRight}>
               <MoreVert />
             </div>
           </div>
           <div className={classes.postCenter}>
-            <span className={classes.postText}>Hey ! It is my first post </span>
-            <img
-              className={classes.postImg}
-              src="assets/post/1.jpeg"
-              alt="post"
-            />
+            <span className={classes.postText}>{post?.desc} </span>
+            <img className={classes.postImg} src={post.photo} alt="post" />
           </div>
           <div className={classes.postBottom}>
             <div className={classes.postBottomLeft}>
               <img className={classes.likeIcon} src="assets/like.png" alt="" />
               <img className={classes.likeIcon} src="assets/heart.png" alt="" />
-              <span className={classes.postLikeCounter}> people like it</span>
+              <span className={classes.postLikeCounter}>
+                {" "}
+                {post.like} people like it
+              </span>
             </div>
             <div className={classes.postBottomRight}>
-              <span className={classes.postCommentText}>11 comments</span>
+              <span className={classes.postCommentText}>{post.comment} comments</span>
             </div>
           </div>
         </div>
