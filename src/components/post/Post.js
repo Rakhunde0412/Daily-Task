@@ -1,9 +1,15 @@
 import { MoreVert } from "@mui/icons-material";
 import classes from "./Post.module.css";
 import { Users } from "../../dummyData";
+import { useState } from "react";
 const Post = ({ post }) => {
-  const user=Users.filter(u=>u.id===1)
-  console.log(user[0].username);
+  const [like, setLike] = useState(post.like);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const likeHandler = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
   return (
     <>
       <div className={classes.post}>
@@ -12,10 +18,14 @@ const Post = ({ post }) => {
             <div className={classes.postTopLeft}>
               <img
                 className={classes.postProfileImg}
-                src="assets/person/1.jpeg"
+                src={
+                  Users.filter((u) => u.id === post.userId)[0].profilePicture
+                }
                 alt=""
               />
-              <span className={classes.postUsername}>vivek rakhunde</span>
+              <span className={classes.postUsername}>
+                {Users.filter((u) => u.id === post.userId)[0].username}
+              </span>
               <span className={classes.postDate}>{post.date}</span>
             </div>
             <div className={classes.postTopRight}>
@@ -28,15 +38,27 @@ const Post = ({ post }) => {
           </div>
           <div className={classes.postBottom}>
             <div className={classes.postBottomLeft}>
-              <img className={classes.likeIcon} src="assets/like.png" alt="" />
-              <img className={classes.likeIcon} src="assets/heart.png" alt="" />
+              <img
+                className={classes.likeIcon}
+                onClick={likeHandler}
+                src="assets/like.png"
+                alt=""
+              />
+              <img
+                className={classes.likeIcon}
+                onClick={likeHandler}
+                src="assets/heart.png"
+                alt=""
+              />
               <span className={classes.postLikeCounter}>
                 {" "}
                 {post.like} people like it
               </span>
             </div>
             <div className={classes.postBottomRight}>
-              <span className={classes.postCommentText}>{post.comment} comments</span>
+              <span className={classes.postCommentText}>
+                {post.comment} comments
+              </span>
             </div>
           </div>
         </div>

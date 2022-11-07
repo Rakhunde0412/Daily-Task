@@ -1,4 +1,6 @@
 import classes from "./Rightbar.module.css";
+import { Users } from "../../dummyData";
+import Online from "../online/Online";
 
 const Rightbar = () => {
   return (
@@ -14,50 +16,9 @@ const Rightbar = () => {
         <img className={classes.rightbarAd} src="assets/ad.png" alt="" />
         <h4 className={classes.rightbarTitle}>Online Friends</h4>
         <ul className={classes.rightbarFriendList}>
-          <li className={classes.rightbarFriend}>
-            <div className={classes.rightbarProfileImgContainer}>
-              <img
-                className={classes.rightbarProfileImg}
-                src="assets/person/3.jpeg"
-                alt=""
-              />
-              <span className={classes.rightbarOnline}></span>
-            </div>
-            <span className={classes.rightbarUsername}>vivek rakhunde</span>
-          </li>
-          <li className={classes.rightbarFriend}>
-            <div className={classes.rightbarProfileImgContainer}>
-              <img
-                className={classes.rightbarProfileImg}
-                src="assets/person/3.jpeg"
-                alt=""
-              />
-              <span className={classes.rightbarOnline}></span>
-            </div>
-            <span className={classes.rightbarUsername}>Pratik </span>
-          </li>
-          <li className={classes.rightbarFriend}>
-            <div className={classes.rightbarProfileImgContainer}>
-              <img
-                className={classes.rightbarProfileImg}
-                src="assets/person/3.jpeg"
-                alt=""
-              />
-              <span className={classes.rightbarOnline}></span>
-            </div>
-            <span className={classes.rightbarUsername}>Avishkar</span>
-          </li>
-          <li className={classes.rightbarFriend}>
-            <div className={classes.rightbarProfileImgContainer}>
-              <img
-                className={classes.rightbarProfileImg}
-                src="assets/person/3.jpeg"
-                alt=""
-              />
-              <span className={classes.rightbarOnline}></span>
-            </div>
-            <span className={classes.rightbarUsername}>Avishkar</span>
-          </li>
+          {Users.map((u) => (
+            <Online key={u.id} user={u} />
+          ))}
         </ul>
       </div>
     </>

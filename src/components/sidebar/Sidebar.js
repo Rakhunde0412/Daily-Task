@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Sidebar.module.css";
 import FeedIcon from "@mui/icons-material/Feed";
+import { Users } from "../../dummyData";
 import {
   Bookmark,
   Chat,
@@ -11,6 +12,7 @@ import {
   School,
   WorkOutline,
 } from "@mui/icons-material";
+import CloseFriends from "../closeFriends/CloseFriends";
 
 const Sidebar = () => {
   return (
@@ -57,11 +59,11 @@ const Sidebar = () => {
           </ul>
           <button className={classes.sidebarButton}>Show More</button>
           <hr className={classes.sidebarHr} />
-          {/* <ul className={classes.sidebarFriendList}>
+          <ul className={classes.sidebarFriendList}>
           {Users.map((u) => (
-            <CloseFriend key={u.id} user={u} />
+            <CloseFriends key={u.id} user={u} />
           ))}
-        </ul> */}
+        </ul>
         </div>
       </div>
     </>
