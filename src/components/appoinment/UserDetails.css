@@ -1,0 +1,32 @@
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.flex-container>div {
+    /* background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px; */
+    text-align: center;
+    /* line-height: 75px;
+    font-size: 30px; */
+}
+.text-slots{
+    color:#7289da ;     
+    text-decoration: underline;   
+    text-decoration-color: #7289da;   
+}
+th,td{
+    color:#7289da ; 
+}
+.timeslot{
+    cursor: pointer;
+    color: #4F9E70;
+}
+
+.profile{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
