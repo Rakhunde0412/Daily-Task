@@ -25,5 +25,5 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 
 app.listen(3001, () => {
-  console.log("Backend server is ready on port: 3001");
+  console.log("Backend server  ready on port: 3001");
 });
